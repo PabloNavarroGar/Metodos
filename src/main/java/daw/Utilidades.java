@@ -5,6 +5,7 @@
 package daw;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -15,10 +16,10 @@ public class Utilidades {
 
     private static Scanner flujo = new Scanner(System.in);
 
-       //metodd para comprobar dado un numero si entre 2
+    //metodd para comprobar dado un numero si entre 2
     public static boolean comprobarRango(int numero, int min, int max) {
         boolean resultado = false;
-        
+
         if (numero >= min && numero <= max) {
             resultado = true;
         }
@@ -28,7 +29,6 @@ public class Utilidades {
     }
 
     //Metodo para introducir numeros enteros
-
     public static int leerEnterosSinErrores() {
 
         int numero = 0;
@@ -50,62 +50,51 @@ public class Utilidades {
             }
         } while (true);
         return numero;
-        
-   
+
     }
 
-    
-    
-    
     public static int leerEnteroRango() {
-        
+
         int numero = 0;
         //declaracion de los min y los max
-        int min=0;
-        int max=0;
+        int min = 0;
+        int max = 0;
         //se pone dentro del blobuqe try la sentencia que puede producir 
         //el error
-        do{
+        do {
             System.out.println(" Introduce el numero entero:");
-            
-            try{
-                
+
+            try {
+
                 numero = flujo.nextInt();
                 System.out.println("El numero  es: " + numero);
-            }catch(InputMismatchException ime){
+            } catch (InputMismatchException ime) {
                 // En caso de error
                 System.out.println("No se puede leer el numero");
                 // Limpieza del buffer
                 flujo.nextLine();
-                
-                
+
             }
-        }while(comprobarRango(numero,min,max));
-        
+        } while (comprobarRango(numero, min, max));
+
         return numero;
     }
-    
-    
+
     //Metodo generar aleatorio dentro del rango
-    
-    //public static int numeroAleatorioRango(){
+    public static int numeroAleatorioRango() {
+
+        Random random = new Random();
+        
+        int enteroAleatorio = random.nextInt();
+        int min=0;
+        int max=0;
+        do{
+            
+        System.out.println("Entero aleatorio: " + enteroAleatorio);
+        }while(comprobarRango(enteroAleatorio, min, max));
         
         
-        
-        
-        
-        
-        
-        
-    //}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        return enteroAleatorio;
+    }
+
 }
