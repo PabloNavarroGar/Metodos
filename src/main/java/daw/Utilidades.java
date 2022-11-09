@@ -248,7 +248,7 @@ public class Utilidades {
     
     
     //INTRODUCIR UN NUMERO POR CONSOLA 
-     public static double importeCompra() {
+     public static double numeroPorConsola() {
         Scanner teclado = new Scanner(System.in);
         double importe = 0;
         boolean repetir = true;
@@ -274,7 +274,7 @@ public class Utilidades {
         //reparacionesMartes = (float) (REPARACIONES * numeroReparacionesDelDia);
     
     
-    public static int pedirNumeroUsuarioSinErrores() {
+    public static int pedirNumeroSinErroresJO() {
         //Pedimos un entero al usuario 
         int numeroUsuario=0;
         do {
