@@ -4,6 +4,8 @@
  */
 package daw;
 
+import java.util.Random;
+
 /**
  *
  * @author pablo
@@ -17,13 +19,29 @@ public class Prueba {
         // TODO code application logic here
         
         
-        
-        
-        
+        numeroAleatorioEntreDosRangos();
+     
         
         
         
         
     }
+    
+    
+     public static int numeroAleatorioEntreDosRangos(){
+        Random enteroAleatorio=new Random();
+        int numero=0;
+        int minimo = 10, maximo = 20;
+        
+        numero = enteroAleatorio.nextInt(minimo - maximo + 1) + numero;
+        System.out.println("Entero aleatorio entre " +minimo +" y " +maximo+ " === " + numero);
+
+       
+        return numero;
+       
+       
+       
+       
+   }
     
 }
