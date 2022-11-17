@@ -250,21 +250,23 @@ public class Utilidades {
     //INTRODUCIR UN NUMERO POR CONSOLA 
      public static double numeroPorConsola() {
         Scanner teclado = new Scanner(System.in);
-        double importe = 0;
-        boolean repetir = true;
+// si se crea el teclado ya en el objeto se elimina
+        double importe;
+        
         do{
         try {
+            importe=0;
             System.out.println("Introduzca el importe de su compra por favor");
 
             importe = teclado.nextDouble();
 
-            System.out.println(" El importe de tu compra es de  " + importe);
-            repetir = false;
+            
+            break;
         } catch (InputMismatchException ime) {
             System.out.println("Dato Invalido,vuelva a introducirlo");
             teclado.nextLine();
         }
-        }while(repetir);
+        }while(true);
         return importe;
     }
     
